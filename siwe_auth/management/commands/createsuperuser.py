@@ -91,7 +91,6 @@ class Command(BaseCommand):
         user_data = {}
         verbose_field_name = self.username_field.verbose_name
 
-        raise('This createsuperuser :)')
         try:
             if options["interactive"]:
                 # Same as user_data but without many to many fields and with
