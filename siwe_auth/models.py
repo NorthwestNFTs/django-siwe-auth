@@ -12,7 +12,7 @@ from web3 import Web3
 
 def validate_ethereum_address(value):
     if not Web3.isChecksumAddress(value):
-        raise ValidationError
+        raise ValidationError('Invalid address')
 
 
 class WalletManager(BaseUserManager):
