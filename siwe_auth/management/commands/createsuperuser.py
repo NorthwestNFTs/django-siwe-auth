@@ -6,6 +6,7 @@ import os
 import sys
 
 from django.contrib.auth import get_user_model
+from django.contrib.auth.management.commands.createsuperuser import Command as DefaultCreateSuperUserCommand
 from django.contrib.auth.management import get_default_username
 from django.core import exceptions
 from django.core.management.base import BaseCommand, CommandError
@@ -13,6 +14,7 @@ from django.db import DEFAULT_DB_ALIAS
 from django.utils.text import capfirst
 
 # siwe_auth needs to come before django.contrib.auth inorder for this command to take precedence.
+# this command assumes that AUTH_USER_MODEL = "siwe_auth.Wallet"
 
 class NotRunningInTTYException(Exception):
     pass
